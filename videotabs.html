@@ -1,0 +1,98 @@
+
+<html>                                                                  
+<head>                                                                  
+<script type="text/javascript" src="jquery/jquery-1.6.3.js"></script>          
+<script type="text/javascript" src="jquery/jq.easing.js"></script>
+<script type="text/javascript">                                         
+   // we will add our javascript code here 
+	$(document).ready(function() {
+		$("#box0").mouseenter(function(){
+			$("#video1").css({"display":"block"});
+			$("#video1").css({"border":"1px solid green"});
+			$("#video1").animate();
+		});
+		$("#video1").mouseleave(function(){
+			$("#video1").css({"display":"none"});
+			$("#video1").animate();
+		}
+		);
+		
+		$("#box1").mouseenter(function(){
+			$("#video2").css({"display":"block"});
+			$("#video2").css({"border":"1px solid red"});
+			$("#video2").animate();
+		});
+		$("#box1").mouseleave(function(){
+			$("#video2").css({"display":"none"});
+			$("#video2").animate();
+		}
+		);
+	});
+</script>  
+<style type="text/css">
+#box0
+{
+	width:50px;
+	height: 362px;
+	background: green;
+	margin-left:20px;
+	float: left;
+}
+#box1
+{
+	width:50px;
+	height: 362px;
+	background: red;
+	margin-left:20px;
+	float: left;
+}
+#box2
+{
+	width:50px;
+	height: 362px;
+	background: yellow;
+	margin-left:20px;
+	float: left;
+}
+#box3
+{
+	width:50px;
+	height: 362px;
+	background: blue;
+	margin-left:20px;
+	float: left;
+}
+p{
+	transform: rotate(270deg);
+	-ms-transform: rotate(270deg); /* IE 9 */
+	-webkit-transform: rotate(270deg); /* Safari and Chrome */
+	-o-transform: rotate(270deg); /* Opera */
+	-moz-transform: rotate(270deg); /* Firefox */
+	margin-top:275px;
+}
+#video1
+{
+	float:left;
+	display:none;
+}
+#video2
+{
+	float:left;
+	display:none;
+}
+</style>
+ </head>                                                                 
+ <body>
+   <!-- we will add our HTML content here -->
+<div id="box0"><p>ANIMASJON</p></div>
+<div id="video1">
+		<object width="640" height="360"><param name="movie" value="http://www.youtube.com/v/feXigKevTFU&autoplay=1?version=3&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/feXigKevTFU?version=3&amp;hl=en_US" type="application/x-shockwave-flash" width="640" height="360" allowscriptaccess="always" allowfullscreen="true"></embed></object>
+</div>
+<div id="box1"><p>VIDEO</p></div>
+<div id="video2">
+			<object width="480" height="360"><param name="movie" value="http://www.youtube.com/v/WGgimhpe8lw?version=3&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/WGgimhpe8lw?version=3&amp;hl=en_US" type="application/x-shockwave-flash" width="480" height="360" allowscriptaccess="always" allowfullscreen="true"></embed></object>
+		</div>		
+<div id="box2"><p>DEKOR</p></div>
+<div id="box3"><p>SKILT</p></div>
+ </body>                                                                 
+ </html>

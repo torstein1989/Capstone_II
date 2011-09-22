@@ -1,32 +1,53 @@
 
 <html>                                                                  
 <head>                                                                  
-<script type="text/javascript" src="jquery/jquery-1.6.3.js"></script>          
-<script type="text/javascript" src="jquery/jq.easing.js"></script>
-<script type="text/javascript">                                         
-   // we will add our javascript code here 
+<script type="text/javascript" src="js/jquery-1.6.3.js"></script>
+<script type="text/javascript">                                          
 	$(document).ready(function() {
+		//box0 and video_0
 		$("#box0").mouseenter(function(){
-			$("#video1").css({"display":"block"});
-			$("#video1").css({"border":"1px solid green"});
-			$("#video1").animate();
+			$("#video_0").css({"display":"block"});
+			$("#video_0").css({"border":"1px solid green"});
+			$("#video_0").animate();
 		});
-		$("#video1").mouseleave(function(){
-			$("#video1").css({"display":"none"});
-			$("#video1").animate();
+		$("#video_0").mouseleave(function(){
+			$("#video_0").css({"display":"none"});
+			$("#video_0").animate();
 		}
 		);
-		
+		//box1 and video_1
 		$("#box1").mouseenter(function(){
-			$("#video2").css({"display":"block"});
-			$("#video2").css({"border":"1px solid red"});
-			$("#video2").animate();
+			$("#video_1").css({"display":"block"});
+			$("#video_1").css({"border":"1px solid red"});
+			$("#video_1").animate();
 		});
-		$("#box1").mouseleave(function(){
-			$("#video2").css({"display":"none"});
-			$("#video2").animate();
-		}
-		);
+		$("#video_1").mouseleave(function(){
+			$("#video_1").css({"display":"none"});
+			$("#video_1").animate();
+		});
+		
+		//box2 and video_2
+		$("#box2").mouseenter(function(){
+			$("#video_2").css({"display":"block"});
+			$("#video_2").css({"border":"1px solid red"});
+			$("#video_2").animate();
+		});
+		$("#video_2").mouseleave(function(){
+			$("#video_2").css({"display":"none"});
+			$("#video_2").animate();
+		});
+		
+		//box3 and video_3
+		$("#box3").mouseenter(function(){
+			$("#video_3").css({"display":"block"});
+			$("#video_3").css({"border":"1px solid red"});
+			$("#video_3").animate();
+		});
+		$("#video_3").mouseleave(function(){
+			$("#video_3").css({"display":"none"});
+			$("#video_3").animate();
+		});
+		
 	});
 </script>  
 <style type="text/css">
@@ -70,29 +91,62 @@ p{
 	-moz-transform: rotate(270deg); /* Firefox */
 	margin-top:275px;
 }
-#video1
+#video_0
 {
 	float:left;
 	display:none;
 }
-#video2
+#video_1
 {
 	float:left;
 	display:none;
 }
+#video_2
+{
+	float:left;
+	display:none;
+}
+#video_3
+{
+	float:left;
+	display:none;
+}
+
+
+
 </style>
- </head>                                                                 
+</head>                                                                 
+ 
  <body>
-   <!-- we will add our HTML content here -->
-<div id="box0"><p>ANIMASJON</p></div>
-<div id="video1">
-		<object width="640" height="360"><param name="movie" value="http://www.youtube.com/v/feXigKevTFU&autoplay=1?version=3&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/feXigKevTFU?version=3&amp;hl=en_US" type="application/x-shockwave-flash" width="640" height="360" allowscriptaccess="always" allowfullscreen="true"></embed></object>
-</div>
-<div id="box1"><p>VIDEO</p></div>
-<div id="video2">
-			<object width="480" height="360"><param name="movie" value="http://www.youtube.com/v/WGgimhpe8lw?version=3&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/WGgimhpe8lw?version=3&amp;hl=en_US" type="application/x-shockwave-flash" width="480" height="360" allowscriptaccess="always" allowfullscreen="true"></embed></object>
-		</div>		
-<div id="box2"><p>DEKOR</p></div>
-<div id="box3"><p>SKILT</p></div>
+
+	<!-- 1st tab, youtube-video -->
+	<div id="box0"><p>ANIMASJON</p></div>
+	<div id="video_0">
+			<object width="640" height="360"><param name="movie" value="http://www.youtube.com/v/feXigKevTFU?version=3&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/feXigKevTFU?version=3&amp;hl=en_US" type="application/x-shockwave-flash" width="640" height="360" allowscriptaccess="always" allowfullscreen="true"></embed></object>
+	</div>
+	
+	<!-- 2nd tab youtube-video -->
+	<div id="box1"><p>VIDEO</p></div>
+	<div id="video_1">
+		<object width="640" height="360"><param name="movie" value="http://www.youtube.com/v/WGgimhpe8lw?version=3&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/WGgimhpe8lw?version=3&amp;hl=en_US" type="application/x-shockwave-flash" width="480" height="360" allowscriptaccess="always" allowfullscreen="true"></embed></object>
+	</div>	
+	
+	<!-- 3rd tab HTML5-video -->	
+	<div id="box2"><p>DEKOR</p></div>
+	
+		<video id="video_2" width="640" height="360" controls="controls"> 
+			<source src="video/big_buck_bunny.ogg" type="video/ogg"></source>
+			<source src="video/big_buck_bunny.mp4" type="video/mp4"></source>
+			<source src="video/big_buck_bunny.webm" type="video/webm"></source>
+		</video>
+	
+	<!-- 4th tab HTML5-video -->	
+	<div id="box3"><p>SKILT</p></div>
+	<video id="video_3" width="640" height="360" controls="controls"> 
+			<source src="video/big_buck_bunny.ogg" type="video/ogg"></source>
+			<source src="video/big_buck_bunny.mp4" type="video/mp4"></source>
+			<source src="video/big_buck_bunny.webm" type="video/webm"></source>
+	</video>
+	
  </body>                                                                 
  </html>

@@ -4,36 +4,30 @@
 <script type="text/javascript" src="js/jquery-1.6.3.js"></script>
 <script type="text/javascript">                                          
 	$(document).ready(function() {
-		//box0 and video_0
-		$("#box0").mouseenter(function(){
-			
-		});
-		$("#video_0").mouseleave(function(){
-			
-		}
-		);
-		//box1 and video_1
-		$("#box1").mouseenter(function(){
-			
-		});
-		$("#video_1").mouseleave(function(){
-			
+		var a = 70; //Width 
+		var b = 70; //Height
+		var c = 0;	//Height & width fadeout
+		
+		var tIn = 350; 	//Time fade in
+		var tOut = 150;	//Time fade out
+		
+		//On mouseover start animation in, show
+		$("#box0").mouseover(function(){
+			$(".whiteAnimationTop, .whiteAnimationMid, .whiteAnimationBottom").css({display:"block"});
+			$(".whiteAnimationTop, .whiteAnimationMid, .whiteAnimationBottom").animate({
+				width:a+"px",
+				height:b+"px"
+			},tIn);
 		});
 		
-		//box2 and video_2
-		$("#box2").mouseenter(function(){
-			
-		});
-		$("#video_2").mouseleave(function(){
-			
-		});
-		
-		//box3 and video_3
-		$("#box3").mouseenter(function(){
-			
-		});
-		$("#video_3").mouseleave(function(){
-			
+		//When mouseleave animation out, hide 
+		$("#box0").mouseleave(function(){
+			c=0;
+			$(".whiteAnimationTop, .whiteAnimationMid, .whiteAnimationBottom").animate({
+				width:c+"px",
+				height:c+"px",
+				display:"none"
+			},tOut);
 		});
 		
 	});
@@ -48,7 +42,6 @@
 	float: left;
 	/**CSS3*/
 	border-radius: 10px 10px;
-	
 }
 #mirrorBox0{
 	width:70px;
@@ -61,6 +54,51 @@
 	-webkit-border-top-right-radius: 10px 10px;
  	-webkit-box-shadow: 0px 10px 15px 5px green;
  	opacity: 0.3;
+}
+.whiteAnimationTop{
+	display: none;
+	margin-top:-470px; 
+	background: white;
+	float:left;
+	z-index:-1000;
+	/**CSS3*/
+	
+	/** Making the skew fit to the box, divide by 2. Ex box width= 70px -> skew ()0deg,35deg)*/
+	transform: skew(0deg,35deg); 
+	-ms-transform: skew(0deg,35deg); /* IE 9 */
+	-webkit-transform: skew(0deg,35deg); /* Safari and Chrome */
+	-o-transform: skew(0deg,35deg); /* Opera */
+	-moz-transform: skew(0deg,35deg); /* Firefox */
+	opacity:0.2;	
+}
+.whiteAnimationMid{
+	display: none;
+	margin-top:-355px; 
+	background: white;
+	float:left;
+	z-index:-1000;
+	/**CSS3*/
+	transform: skew(0deg,35deg);
+	-ms-transform: skew(0deg,35deg); /* IE 9 */
+	-webkit-transform: skew(0deg,35deg); /* Safari and Chrome */
+	-o-transform: skew(0deg,35deg); /* Opera */
+	-moz-transform: skew(0deg,35deg); /* Firefox */
+	opacity:0.2;	
+	
+}
+.whiteAnimationBottom{
+	display: none;
+	margin-top:-240px; 
+	background: white;
+	float:left;
+	z-index:-1000;
+	/**CSS3*/
+	transform: skew(0deg,35deg);
+	-ms-transform: skew(0deg,35deg); /* IE 9 */
+	-webkit-transform: skew(0deg,35deg); /* Safari and Chrome */
+	-o-transform: skew(0deg,35deg); /* Opera */
+	-moz-transform: skew(0deg,35deg); /* Firefox */
+	opacity:0.2;		
 }
 #box1
 {
@@ -146,10 +184,15 @@ p{
 	<!-- 1st tab, -->
 	<div id="box0">
 		<p>ANIMASJON</p>
+		<!-- Mirror-box-->
 		<div id="mirrorBox0"></div>
+		<!-- Fade element bottom -->
+		<div class="whiteAnimationBottom"></div>
+		<!-- Fade element middle -->
+		<div class="whiteAnimationMid"></div>
+		<!-- Fade element top -->
+		<div class="whiteAnimationTop"></div>
 	</div>
-	
-	
 	
 	<!-- 2nd tab -->
 	<div id="box1">
@@ -160,9 +203,8 @@ p{
 	<!-- 3rd tab -->	
 	<div id="box2">
 		<p>DEKOR</p>
-		<div id="mirrorBox2"></div>
+		<div id="mirrorBox2"></div>	
 	</div>
-	
 	
 	<!-- 4th tab -->	
 	<div id="box3">

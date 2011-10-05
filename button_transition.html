@@ -1,0 +1,239 @@
+
+<html>                                                                  
+<head>                                                                  
+<script type="text/javascript" src="js/jquery-1.6.3.js"></script>
+<script type="text/javascript">                                          
+	$(document).ready(function() {
+		
+		$("#box0").click(function(){
+			$("#box0").css({
+			width:"200px",
+			height:"400px",
+			'margin-left':"100px",
+			transform:"rotate(90deg)",
+			'-moz-transform':"rotate(90deg)",
+			'-webkit-transform':"rotate(90deg)",
+			'-o-transform':"rotate(90deg)"
+			});
+		});
+		
+		var a = 70; //Width 
+		var b = 70; //Height
+		var c = 0;	//Height & width fadeout
+		
+		var tIn = 350; 	//Time fade in
+		var tOut = 150;	//Time fade out
+		
+		//On mouseover start animation in, show
+		$("#box0").mouseover(function(){
+			$(".whiteAnimationTop, .whiteAnimationMid, .whiteAnimationBottom").css({display:"block"});
+			$(".whiteAnimationTop, .whiteAnimationMid, .whiteAnimationBottom").animate({
+				width:a+"px",
+				height:b+"px"
+			},tIn);
+		});
+		
+		//When mouseleave animation out, hide 
+		$("#box0").mouseleave(function(){
+			c=0;
+			$(".whiteAnimationTop, .whiteAnimationMid, .whiteAnimationBottom").animate({
+				width:c+"px",
+				height:c+"px",
+				display:"none"
+			},tOut);
+		});
+		
+		
+		
+	});
+</script>  
+<style type="text/css">
+#box0
+{
+	width:70px;
+	height: 362px;
+	background: green;
+	margin-left:20px;
+	float: left;
+	/**CSS3*/
+	border-radius: 10px 10px;
+	transition:width 0.5s, height 0.5s;
+	-moz-transition:width 0.5s, height 0.5s; 
+	-moz-transform 0.5s; /* Firefox 4 */
+	-webkit-transition:width 0.5s, height 0.5s; 
+	-webkit-transform 0.5s; /* Safari and Chrome */
+	-o-transition:width 0.5s, height 0.5s; 
+	-o-transform 0.5s; /* Opera */
+}
+
+#mirrorBox0{
+	width:70px;
+	height: 131px;
+	background: green;
+	margin-top:55px;
+	float:left;
+	/**CSS3*/
+	-webkit-border-top-left-radius: 10px 10px;
+	-webkit-border-top-right-radius: 10px 10px;
+ 	-webkit-box-shadow: 0px 10px 15px 5px green;
+ 	opacity: 0.3;
+}
+.whiteAnimationTop{
+	display: none;
+	margin-top:-470px; 
+	background: white;
+	float:left;
+	z-index:-1000;
+	/**CSS3*/
+	
+	/** Making the skew fit to the box, divide by 2. Ex box width= 70px -> skew ()0deg,35deg)*/
+	transform: skew(0deg,35deg); 
+	-ms-transform: skew(0deg,35deg); /* IE 9 */
+	-webkit-transform: skew(0deg,35deg); /* Safari and Chrome */
+	-o-transform: skew(0deg,35deg); /* Opera */
+	-moz-transform: skew(0deg,35deg); /* Firefox */
+	opacity:0.2;	
+}
+.whiteAnimationMid{
+	display: none;
+	margin-top:-355px; 
+	background: white;
+	float:left;
+	z-index:-1000;
+	/**CSS3*/
+	transform: skew(0deg,35deg);
+	-ms-transform: skew(0deg,35deg); /* IE 9 */
+	-webkit-transform: skew(0deg,35deg); /* Safari and Chrome */
+	-o-transform: skew(0deg,35deg); /* Opera */
+	-moz-transform: skew(0deg,35deg); /* Firefox */
+	opacity:0.2;	
+	
+}
+.whiteAnimationBottom{
+	display: none;
+	margin-top:-240px; 
+	background: white;
+	float:left;
+	z-index:-1000;
+	/**CSS3*/
+	transform: skew(0deg,35deg);
+	-ms-transform: skew(0deg,35deg); /* IE 9 */
+	-webkit-transform: skew(0deg,35deg); /* Safari and Chrome */
+	-o-transform: skew(0deg,35deg); /* Opera */
+	-moz-transform: skew(0deg,35deg); /* Firefox */
+	opacity:0.2;		
+}
+#box1
+{
+	width:70px;
+	height: 362px;
+	background: red;
+	margin-left:20px;
+	float: left;
+	/**CSS3*/
+	border-radius: 10px 10px;
+}
+#mirrorBox1{
+	width:70px;
+	height: 131px;
+	background: red;
+	margin-top:55px;
+	float:left;
+	/**CSS3*/
+	-webkit-border-top-left-radius: 10px 10px;
+	-webkit-border-top-right-radius: 10px 10px;
+ 	-webkit-box-shadow: 0px 10px 15px 5px red;
+ 	opacity: 0.3;
+}
+#box2
+{
+	width:70px;
+	height: 362px;
+	background: yellow;
+	margin-left:20px;
+	float: left;
+	/**CSS3*/
+	border-radius: 10px 10px;
+}
+#mirrorBox2{
+	width:70px;
+	height: 131px;
+	background: yellow;
+	margin-top:55px;
+	float:left;
+	/**CSS3*/
+	-webkit-border-top-left-radius: 10px 10px;
+	-webkit-border-top-right-radius: 10px 10px;
+ 	-webkit-box-shadow: 0px 10px 15px 5px yellow;
+ 	opacity: 0.3;
+}
+#box3
+{
+	width:70px;
+	height: 362px;
+	background: blue;
+	margin-left:20px;
+	float: left;
+	/**CSS3*/
+	border-radius: 10px 10px;
+}
+#mirrorBox3{
+	width:70px;
+	height: 131px;
+	background: blue;
+	margin-top:55px;
+	float:left;
+	/**CSS3*/
+	-webkit-border-top-left-radius: 10px 10px;
+	-webkit-border-top-right-radius: 10px 10px;
+ 	-webkit-box-shadow: 0px 10px 15px 5px blue;
+ 	opacity: 0.3;
+}
+p{
+	transform: rotate(270deg);
+	-ms-transform: rotate(270deg); /* IE 9 */
+	-webkit-transform: rotate(270deg); /* Safari and Chrome */
+	-o-transform: rotate(270deg); /* Opera */
+	-moz-transform: rotate(270deg); /* Firefox */
+	margin-top:275px;
+}
+
+
+</style>
+</head>                                                                 
+ 
+ <body>
+
+	<!-- 1st tab, -->
+	<div id="box0">
+		<p>ANIMASJON</p>
+		<!-- Mirror-box-->
+		<div id="mirrorBox0"></div>
+		<!-- Fade element bottom -->
+		<div class="whiteAnimationBottom"></div>
+		<!-- Fade element middle -->
+		<div class="whiteAnimationMid"></div>
+		<!-- Fade element top -->
+		<div class="whiteAnimationTop"></div>
+	</div>
+	
+	<!-- 2nd tab -->
+	<div id="box1">
+		<p>VIDEO</p>
+		<div id="mirrorBox1"></div>
+	</div>
+		
+	<!-- 3rd tab -->	
+	<div id="box2">
+		<p>DEKOR</p>
+		<div id="mirrorBox2"></div>	
+	</div>
+	
+	<!-- 4th tab -->	
+	<div id="box3">
+		<p>SKILT</p>
+		<div id="mirrorBox3"></div>
+	</div>
+	
+ </body>                                                                 
+ </html>

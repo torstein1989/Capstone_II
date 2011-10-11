@@ -5,17 +5,56 @@
 <script type="text/javascript">                                          
 	$(document).ready(function() {
 		
+		var isRotated = false;
+				
 		$("#box0").click(function(){
 			$("#box0").css({
-			width:"200px",
-			height:"400px",
-			'margin-left':"100px",
-			transform:"rotate(90deg)",
-			'-moz-transform':"rotate(90deg)",
-			'-webkit-transform':"rotate(90deg)",
-			'-o-transform':"rotate(90deg)"
+				width:"350px",
+				height:"600px",
+				'z-index':"10000",
+				'margin-left':"120px",
+				'margin-top':"-105px",
+				'transform':"rotate(90deg)",
+				'-moz-transform':"rotate(90deg)",
+				'-webkit-transform':"rotate(90deg)",
+				'-o-transform':"rotate(90deg)"
 			});
-		});
+			$("#box1").css({'margin-left':"-200px"});
+			$("#mirrorBox1,p").hide()
+			$("#box2").css({'margin-left':"-100px"});
+			$("#mirrorBox2").hide()
+			$("#box3").css({'margin-left':"0"});
+			$("#mirrorBox3").hide()
+			
+			$("#contentframe,#content,#content2").css({display:"block"});
+			
+			isRotated = true;
+			
+		});//End box0
+			
+		$("#box1").click(function(){
+			$("#box1").css({
+				width:"350px",
+				height:"600px",
+				'z-index':"10000",
+				'margin-left':"120px",
+				'margin-top':"-105px",
+				'transform':"rotate(90deg)",
+				'-moz-transform':"rotate(90deg)",
+				'-webkit-transform':"rotate(90deg)",
+				'-o-transform':"rotate(90deg)"
+			});
+			$("#box0").hide();
+		});//End box1
+		
+		$("#box2").click(function(){
+			
+		});//End box2
+		
+		$("#box3").click(function(){
+			
+		});//End box3
+			
 		
 		var a = 70; //Width 
 		var b = 70; //Height
@@ -26,11 +65,14 @@
 		
 		//On mouseover start animation in, show
 		$("#box0").mouseover(function(){
-			$(".whiteAnimationTop, .whiteAnimationMid, .whiteAnimationBottom").css({display:"block"});
-			$(".whiteAnimationTop, .whiteAnimationMid, .whiteAnimationBottom").animate({
-				width:a+"px",
-				height:b+"px"
-			},tIn);
+			if(isRotated!=true){
+				$(".whiteAnimationTop, .whiteAnimationMid, .whiteAnimationBottom").css({display:"block"});
+				$(".whiteAnimationTop, .whiteAnimationMid, .whiteAnimationBottom").animate({
+					width:a+"px",
+					height:b+"px"
+				},tIn);
+			}
+			
 		});
 		
 		//When mouseleave animation out, hide 
@@ -57,13 +99,10 @@
 	float: left;
 	/**CSS3*/
 	border-radius: 10px 10px;
-	transition:width 0.5s, height 0.5s;
-	-moz-transition:width 0.5s, height 0.5s; 
-	-moz-transform 0.5s; /* Firefox 4 */
-	-webkit-transition:width 0.5s, height 0.5s; 
-	-webkit-transform 0.5s; /* Safari and Chrome */
-	-o-transition:width 0.5s, height 0.5s; 
-	-o-transform 0.5s; /* Opera */
+	transition:90deg 2s, height 2s;
+	-moz-transition:width 2s, height 2s, -moz-transform 2s; /* Firefox 4 */
+	-webkit-transition:width 2s, height 2s, -webkit-transform 2s; /* Safari and Chrome */
+	-o-transition:width 2s, height 2s, -o-transform 2s; /* Opera */
 }
 
 #mirrorBox0{
@@ -123,6 +162,22 @@
 	-moz-transform: skew(0deg,35deg); /* Firefox */
 	opacity:0.2;		
 }
+#contentframe{
+	border: 1px solid black;
+	margin: 5px;
+	height: 589px;
+	display: none;
+}
+#content{
+	border: 1px solid gray;
+	height: 120px;
+	display: none;
+}
+#content2{
+	border: 1px solid white;
+	height: 242px;
+	display: none;
+}
 #box1
 {
 	width:70px;
@@ -132,6 +187,11 @@
 	float: left;
 	/**CSS3*/
 	border-radius: 10px 10px;
+	
+	transition:90deg 2s, height 2s;
+	-moz-transition:width 2s, height 2s, -moz-transform 2s; /* Firefox 4 */
+	-webkit-transition:width 2s, height 2s, -webkit-transform 2s; /* Safari and Chrome */
+	-o-transition:width 2s, height 2s, -o-transform 2s; /* Opera */
 }
 #mirrorBox1{
 	width:70px;
@@ -206,8 +266,19 @@ p{
 
 	<!-- 1st tab, -->
 	<div id="box0">
-		<p>ANIMASJON</p>
+		<!-- Frame tha appears after the transition has run -->
+			<div id="contentframe">
+				<div id ="content2">
+					<p>En video som spiller av</p>
+				</div>
+				
+				<div id="content">
+					<p>Tekst til video.Tekst til video.Tekst til video.Tekst til video.Tekst til video.Tekst til video.</p>
+				</div>
+			</div>
+		<p>ANIMASJON</p><!-- Should be programmed so it only appears on hover -->
 		<!-- Mirror-box-->
+			
 		<div id="mirrorBox0"></div>
 		<!-- Fade element bottom -->
 		<div class="whiteAnimationBottom"></div>
@@ -215,7 +286,7 @@ p{
 		<div class="whiteAnimationMid"></div>
 		<!-- Fade element top -->
 		<div class="whiteAnimationTop"></div>
-	</div>
+	</div>	
 	
 	<!-- 2nd tab -->
 	<div id="box1">

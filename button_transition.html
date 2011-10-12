@@ -1,43 +1,134 @@
 <html>                                                                  
 <head>                                                                  
 <script type="text/javascript" src="js/jquery-1.6.3.js"></script>
-<script type="text/javascript">                                          
+<script type="text/javascript">
+                                          
+		var designClicked = true;
+		var animationClicked = true;
+		var skiltClicked = true;
+		var dekorClicked = true;
+		
 	$(document).ready(function() {
-					
+		
+		/**
+		 * Functions clicked
+		 */
 		$("#box0").click(function(){
+			if (designClicked && animationClicked && skiltClicked && dekorClicked) {
+				box0();	
+			};
+		});
+		$("#box1").click(function(){
+			if (designClicked && animationClicked && skiltClicked && dekorClicked) {
+				box1();	
+			};
+		});
+		$("#box2").click(function(){
+			if (designClicked && animationClicked && skiltClicked && dekorClicked) {
+				box2();	
+			};
+		});
+		$("#box3").click(function(){
+			if (designClicked && animationClicked && skiltClicked && dekorClicked) {
+				box3();	
+			};
+		});
+		/**
+		 * Manipulating of the boxes
+		 */
+		function box0 () {
 			$("#box0").css({
 				width:"362px",
-				height:"600px",
+				height:"800px",
 				'z-index':"10000",
-				'margin-left':"120px",
-				'margin-top':"-105px",
+				'left':"20%",
+				'margin-top':"-200px",
 				'transform':"rotate(90deg)",
 				'-moz-transform':"rotate(90deg)",
 				'-webkit-transform':"rotate(90deg)",
 				'-o-transform':"rotate(90deg)"
 			});
+			$("#box00").css({'left':"20%",'background':"green"});
+			$("#box00,#box1,#box2,#box3").css({'top':"20px"});
 			$("#mirrorBox0,#mirrorBox1,#mirrorBox2,#mirrorBox3,#box1,#box2,#box3").hide();
-			$("#box1").css({'margin-left':"-200px"});
-			$("#box2").css({'margin-left':"-100px"});
-			$("#box3").css({'margin-left':"0"});
-			
-						
-			$("#box1").delay(1600).show("slow").animate({'margin-top':"2px"},1000);
-			$("#box2").delay(1600).show("slow").animate({'margin-top':"2px"},1350);
-			$("#box3").delay(1600).show("slow").animate({'margin-top':"2px"},1700);
-			
-			});//End box0
-		$("#box1").click(function(){
-				
-		});//End box1
+			$("#box00").delay(1250).show("slow").animate({'top':"0"},850);
+			$("#box1").delay(1250).show("slow").animate({'top':"0"},1000);
+			$("#box2").delay(1250).show("slow").animate({'top':"0"},1350);
+			$("#box3").delay(1250).show("slow").animate({'top':"0"},1700);
+			animationClicked = false;
+		}
+		//End box0
 		
-		$("#box2").click(function(){
-			
-		});//End box2
+		function box1 () {
+			$("#box1").css({
+				width:"362px",
+				height:"800px",
+				'z-index':"10000",
+				'left':"20%",
+				'margin-top':"-200px",
+				'transform':"rotate(90deg)",
+				'-moz-transform':"rotate(90deg)",
+				'-webkit-transform':"rotate(90deg)",
+				'-o-transform':"rotate(90deg)"
+			});
+			$("#box00").css({'left':"40%",'background':"red"});
+			$("#box00,#box0,#box2,#box3").css({'top':"20px"});
+			$("#mirrorBox0,#mirrorBox1,#mirrorBox2,#mirrorBox3,#box0,#box2,#box3").hide();
+			$("#box0").delay(1250).show("slow").animate({'top':"0"},850);
+			$("#box00").delay(1250).show("slow").animate({'top':"0"},1000);
+			$("#box2").delay(1250).show("slow").animate({'top':"0"},1350);
+			$("#box3").delay(1250).show("slow").animate({'top':"0"},1700);
+			designClicked = false;
+		}
+		//End box1
 		
-		$("#box3").click(function(){
-			
-		}); //End box3
+		function box2 () {
+			$("#box2").css({
+				width:"362px",
+				height:"800px",
+				'z-index':"10000",
+				'left':"20%",
+				'margin-top':"-200px",
+				'transform':"rotate(-90deg)",
+				'-moz-transform':"rotate(-90deg)",
+				'-webkit-transform':"rotate(-90deg)",
+				'-o-transform':"rotate(-90deg)"
+			});
+			$("#box00").css({'left':"60%",'background':"yellow"});
+			$("#box00,#box0,#box1,#box3").css({'top':"20px"});
+			$("#mirrorBox0,#mirrorBox1,#mirrorBox2,#mirrorBox3,#box0,#box1,#box3").hide();
+			$("#box0").delay(1250).show("slow").animate({'top':"0"},850);
+			$("#box1").delay(1250).show("slow").animate({'top':"0"},1000);
+			$("#box00").delay(1250).show("slow").animate({'top':"0"},1350);
+			$("#box3").delay(1250).show("slow").animate({'top':"0"},1700);
+			dekorClicked = false;
+		}
+		//End box2
+		
+		function box3 () {
+			$("#box3").css({
+				width:"362px",
+				height:"800px",
+				'z-index':"10000",
+				'left':"20%",
+				'margin-top':"-200px",
+				'transform':"rotate(-90deg)",
+				'-moz-transform':"rotate(-90deg)",
+				'-webkit-transform':"rotate(-90deg)",
+				'-o-transform':"rotate(-90deg)"
+			});
+			$("#box00").css({'left':"80%",'background':"blue"});
+			$("#box00,#box0,#box1,#box2").css({'top':"20px"});
+			$("#mirrorBox0,#mirrorBox1,#mirrorBox2,#mirrorBox3,#box0,#box1,#box2").hide();
+			$("#box0").delay(1250).show("slow").animate({'top':"0"},850);
+			$("#box1").delay(1250).show("slow").animate({'top':"0"},1000);
+			$("#box2").delay(1250).show("slow").animate({'top':"0"},1350);
+			$("#box00").delay(1250).show("slow").animate({'top':"0"},1700);
+			skiltClicked = false;
+		}
+		//End box3
+		
+		
 			
 		/**
 		var a = 70; //Width 
@@ -75,22 +166,39 @@
 	});
 </script>  
 <style type="text/css">
-#box0
-{
+#wrapp{
+	margin-left:auto;
+	margin-right:auto;
+	width: 750px;
+	position: relative;
+}
+
+#box00{
+	display: none;
 	width:70px;
 	height: 362px;
-	background: green;
-	margin-left:20px;
-	margin-top: 14px;
+	background: gray;
+	position: absolute;
+		left: 10%;
 	float: left;
 	/**CSS3*/
 	border-radius: 10px 10px;
-	transition:90deg 2s, height 2s;
-	-moz-transition:width 2s, height 2s, -moz-transform 2s; /* Firefox 4 */
-	-webkit-transition:width 2s, height 2s, -webkit-transform 2s; /* Safari and Chrome */
-	-o-transition:width 2s, height 2s, -o-transform 2s; /* Opera */
 }
 
+#box0{
+	width:70px;
+	height: 362px;
+	background: green;
+	position: absolute;
+		left:20%;
+	float: left;
+	/**CSS3*/
+	border-radius: 10px 10px;
+	transition:90deg 1s, height 1s;
+	-moz-transition:width 1s, height 1s, -moz-transform 1s; /* Firefox 4 */
+	-webkit-transition:width 1s, height 1s, -webkit-transform 1s; /* Safari and Chrome */
+	-o-transition:width 1s, height 1s, -o-transform 1s; /* Opera */
+}
 #mirrorBox0{
 	width:70px;
 	height: 131px;
@@ -108,16 +216,15 @@
 	width:70px;
 	height: 362px;
 	background: red;
-	margin-left:20px;
-	margin-top: 14px;
+	position: absolute;
+		left: 40%;
 	float: left;
 	/**CSS3*/
 	border-radius: 10px 10px;
-	
-	transition:90deg 2s, height 2s;
-	-moz-transition:width 2s, height 2s, -moz-transform 2s; /* Firefox 4 */
-	-webkit-transition:width 2s, height 2s, -webkit-transform 2s; /* Safari and Chrome */
-	-o-transition:width 2s, height 2s, -o-transform 2s; /* Opera */
+	transition:90deg 1s, height 1s;
+	-moz-transition:width 1s, height 1s, -moz-transform 1s; /* Firefox 4 */
+	-webkit-transition:width 1s, height 1s, -webkit-transform 1s; /* Safari and Chrome */
+	-o-transition:width 1s, height 1s, -o-transform 1s; /* Opera */
 }
 #mirrorBox1{
 	width:70px;
@@ -136,11 +243,15 @@
 	width:70px;
 	height: 362px;
 	background: yellow;
-	margin-left:20px;
-	margin-top: 14px;
+	position: absolute;
+		left: 60%;
 	float: left;
 	/**CSS3*/
 	border-radius: 10px 10px;
+	transition:-90deg 1s, height 1s;
+	-moz-transition:width 1s, height 1s, -moz-transform 1s; /* Firefox 4 */
+	-webkit-transition:width 1s, height 1s, -webkit-transform 1s; /* Safari and Chrome */
+	-o-transition:width 1s, height 1s, -o-transform 1s; /* Opera */
 }
 #mirrorBox2{
 	width:70px;
@@ -159,11 +270,15 @@
 	width:70px;
 	height: 362px;
 	background: blue;
-	margin-left:20px;
-	margin-top: 14px;
+	position: absolute;
+		left:80%;
 	float: left;
 	/**CSS3*/
 	border-radius: 10px 10px;
+	transition:-90deg 1s, height 1s;
+	-moz-transition:width 1s, height 1s, -moz-transform 1s; /* Firefox 4 */
+	-webkit-transition:width 1s, height 1s, -webkit-transform 1s; /* Safari and Chrome */
+	-o-transition:width 1s, height 1s, -o-transform 1s; /* Opera */
 }
 #mirrorBox3{
 	width:70px;
@@ -238,7 +353,9 @@ p{
 </head>                                                                 
  
  <body>
-
+<div id="wrapp">
+	<!-- Hidden tab -->
+	<div id="box00"></div>
 	<!-- 1st tab, -->
 	<div id="box0">
 		<p>ANIMASJON</p><!-- Should be programmed so it only appears on hover -->
@@ -255,7 +372,7 @@ p{
 	
 	<!-- 2nd tab -->
 	<div id="box1">
-		<p>VIDEO</p>
+		<p>DESIGN	</p>
 		<div id="mirrorBox1"></div>
 	</div>
 		
@@ -270,6 +387,6 @@ p{
 		<p>SKILT</p>
 		<div id="mirrorBox3"></div>
 	</div>
-	
+</div>
  </body>                                                                 
  </html>

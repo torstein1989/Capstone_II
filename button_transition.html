@@ -1,15 +1,12 @@
-
 <html>                                                                  
 <head>                                                                  
 <script type="text/javascript" src="js/jquery-1.6.3.js"></script>
 <script type="text/javascript">                                          
 	$(document).ready(function() {
-		
-		var isRotated = false;
-				
+					
 		$("#box0").click(function(){
 			$("#box0").css({
-				width:"350px",
+				width:"362px",
 				height:"600px",
 				'z-index':"10000",
 				'margin-left':"120px",
@@ -19,32 +16,19 @@
 				'-webkit-transform':"rotate(90deg)",
 				'-o-transform':"rotate(90deg)"
 			});
+			$("#mirrorBox0,#mirrorBox1,#mirrorBox2,#mirrorBox3,#box1,#box2,#box3").hide();
 			$("#box1").css({'margin-left':"-200px"});
-			$("#mirrorBox1,p").hide()
 			$("#box2").css({'margin-left':"-100px"});
-			$("#mirrorBox2").hide()
 			$("#box3").css({'margin-left':"0"});
-			$("#mirrorBox3").hide()
 			
-			$("#contentframe,#content,#content2").css({display:"block"});
+						
+			$("#box1").delay(1600).show("slow").animate({'margin-top':"2px"},1000);
+			$("#box2").delay(1600).show("slow").animate({'margin-top':"2px"},1350);
+			$("#box3").delay(1600).show("slow").animate({'margin-top':"2px"},1700);
 			
-			isRotated = true;
-			
-		});//End box0
-			
+			});//End box0
 		$("#box1").click(function(){
-			$("#box1").css({
-				width:"350px",
-				height:"600px",
-				'z-index':"10000",
-				'margin-left':"120px",
-				'margin-top':"-105px",
-				'transform':"rotate(90deg)",
-				'-moz-transform':"rotate(90deg)",
-				'-webkit-transform':"rotate(90deg)",
-				'-o-transform':"rotate(90deg)"
-			});
-			$("#box0").hide();
+				
 		});//End box1
 		
 		$("#box2").click(function(){
@@ -53,9 +37,9 @@
 		
 		$("#box3").click(function(){
 			
-		});//End box3
+		}); //End box3
 			
-		
+		/**
 		var a = 70; //Width 
 		var b = 70; //Height
 		var c = 0;	//Height & width fadeout
@@ -84,6 +68,7 @@
 				display:"none"
 			},tOut);
 		});
+		*/
 		
 		
 		
@@ -96,6 +81,7 @@
 	height: 362px;
 	background: green;
 	margin-left:20px;
+	margin-top: 14px;
 	float: left;
 	/**CSS3*/
 	border-radius: 10px 10px;
@@ -117,6 +103,81 @@
  	-webkit-box-shadow: 0px 10px 15px 5px green;
  	opacity: 0.3;
 }
+#box1
+{
+	width:70px;
+	height: 362px;
+	background: red;
+	margin-left:20px;
+	margin-top: 14px;
+	float: left;
+	/**CSS3*/
+	border-radius: 10px 10px;
+	
+	transition:90deg 2s, height 2s;
+	-moz-transition:width 2s, height 2s, -moz-transform 2s; /* Firefox 4 */
+	-webkit-transition:width 2s, height 2s, -webkit-transform 2s; /* Safari and Chrome */
+	-o-transition:width 2s, height 2s, -o-transform 2s; /* Opera */
+}
+#mirrorBox1{
+	width:70px;
+	height: 131px;
+	background: red;
+	margin-top:55px;
+	float:left;
+	/**CSS3*/
+	-webkit-border-top-left-radius: 10px 10px;
+	-webkit-border-top-right-radius: 10px 10px;
+ 	-webkit-box-shadow: 0px 10px 15px 5px red;
+ 	opacity: 0.3;
+}
+#box2
+{
+	width:70px;
+	height: 362px;
+	background: yellow;
+	margin-left:20px;
+	margin-top: 14px;
+	float: left;
+	/**CSS3*/
+	border-radius: 10px 10px;
+}
+#mirrorBox2{
+	width:70px;
+	height: 131px;
+	background: yellow;
+	margin-top:55px;
+	float:left;
+	/**CSS3*/
+	-webkit-border-top-left-radius: 10px 10px;
+	-webkit-border-top-right-radius: 10px 10px;
+ 	-webkit-box-shadow: 0px 10px 15px 5px yellow;
+ 	opacity: 0.3;
+}
+#box3
+{
+	width:70px;
+	height: 362px;
+	background: blue;
+	margin-left:20px;
+	margin-top: 14px;
+	float: left;
+	/**CSS3*/
+	border-radius: 10px 10px;
+}
+#mirrorBox3{
+	width:70px;
+	height: 131px;
+	background: blue;
+	margin-top:55px;
+	float:left;
+	/**CSS3*/
+	-webkit-border-top-left-radius: 10px 10px;
+	-webkit-border-top-right-radius: 10px 10px;
+ 	-webkit-box-shadow: 0px 10px 15px 5px blue;
+ 	opacity: 0.3;
+}
+
 .whiteAnimationTop{
 	display: none;
 	margin-top:-470px; 
@@ -162,93 +223,7 @@
 	-moz-transform: skew(0deg,35deg); /* Firefox */
 	opacity:0.2;		
 }
-#contentframe{
-	border: 1px solid black;
-	margin: 5px;
-	height: 589px;
-	display: none;
-}
-#content{
-	border: 1px solid gray;
-	height: 120px;
-	display: none;
-}
-#content2{
-	border: 1px solid white;
-	height: 242px;
-	display: none;
-}
-#box1
-{
-	width:70px;
-	height: 362px;
-	background: red;
-	margin-left:20px;
-	float: left;
-	/**CSS3*/
-	border-radius: 10px 10px;
-	
-	transition:90deg 2s, height 2s;
-	-moz-transition:width 2s, height 2s, -moz-transform 2s; /* Firefox 4 */
-	-webkit-transition:width 2s, height 2s, -webkit-transform 2s; /* Safari and Chrome */
-	-o-transition:width 2s, height 2s, -o-transform 2s; /* Opera */
-}
-#mirrorBox1{
-	width:70px;
-	height: 131px;
-	background: red;
-	margin-top:55px;
-	float:left;
-	/**CSS3*/
-	-webkit-border-top-left-radius: 10px 10px;
-	-webkit-border-top-right-radius: 10px 10px;
- 	-webkit-box-shadow: 0px 10px 15px 5px red;
- 	opacity: 0.3;
-}
-#box2
-{
-	width:70px;
-	height: 362px;
-	background: yellow;
-	margin-left:20px;
-	float: left;
-	/**CSS3*/
-	border-radius: 10px 10px;
-}
-#mirrorBox2{
-	width:70px;
-	height: 131px;
-	background: yellow;
-	margin-top:55px;
-	float:left;
-	/**CSS3*/
-	-webkit-border-top-left-radius: 10px 10px;
-	-webkit-border-top-right-radius: 10px 10px;
- 	-webkit-box-shadow: 0px 10px 15px 5px yellow;
- 	opacity: 0.3;
-}
-#box3
-{
-	width:70px;
-	height: 362px;
-	background: blue;
-	margin-left:20px;
-	float: left;
-	/**CSS3*/
-	border-radius: 10px 10px;
-}
-#mirrorBox3{
-	width:70px;
-	height: 131px;
-	background: blue;
-	margin-top:55px;
-	float:left;
-	/**CSS3*/
-	-webkit-border-top-left-radius: 10px 10px;
-	-webkit-border-top-right-radius: 10px 10px;
- 	-webkit-box-shadow: 0px 10px 15px 5px blue;
- 	opacity: 0.3;
-}
+
 p{
 	transform: rotate(270deg);
 	-ms-transform: rotate(270deg); /* IE 9 */
@@ -266,16 +241,6 @@ p{
 
 	<!-- 1st tab, -->
 	<div id="box0">
-		<!-- Frame tha appears after the transition has run -->
-			<div id="contentframe">
-				<div id ="content2">
-					<p>En video som spiller av</p>
-				</div>
-				
-				<div id="content">
-					<p>Tekst til video.Tekst til video.Tekst til video.Tekst til video.Tekst til video.Tekst til video.</p>
-				</div>
-			</div>
 		<p>ANIMASJON</p><!-- Should be programmed so it only appears on hover -->
 		<!-- Mirror-box-->
 			

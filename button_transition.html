@@ -16,22 +16,38 @@
 		$("#box0").click(function(){
 			if (designClicked && animationClicked && skiltClicked && dekorClicked) {
 				box0();	
-			};
+			}
+			else {
+				box0_0();
+			}
+			;
 		});
 		$("#box1").click(function(){
 			if (designClicked && animationClicked && skiltClicked && dekorClicked) {
 				box1();	
-			};
+			}
+			else{
+				box1_0();
+			}
+			;
 		});
 		$("#box2").click(function(){
 			if (designClicked && animationClicked && skiltClicked && dekorClicked) {
 				box2();	
-			};
+			}
+			else{
+				box2_0();
+			}
+			;
 		});
 		$("#box3").click(function(){
 			if (designClicked && animationClicked && skiltClicked && dekorClicked) {
 				box3();	
-			};
+			}
+			else{
+				box3_0();
+			}
+			;
 		});
 		/**
 		 * Manipulating of the boxes
@@ -49,13 +65,33 @@
 				'-o-transform':"rotate(90deg)"
 			});
 			$("#box00").css({'left':"20%",'background':"green"});
+			$("#box0 p").css({'display':"none"});
+			$("#contentBox, #contentBox p").css({'z-index': "10050",display:"block"});
 			$("#box00,#box1,#box2,#box3").css({'top':"20px"});
 			$("#mirrorBox0,#mirrorBox1,#mirrorBox2,#mirrorBox3,#box1,#box2,#box3").hide();
-			$("#box00").delay(1250).show("slow").animate({'top':"0"},850);
-			$("#box1").delay(1250).show("slow").animate({'top':"0"},1000);
-			$("#box2").delay(1250).show("slow").animate({'top':"0"},1350);
-			$("#box3").delay(1250).show("slow").animate({'top':"0"},1700);
+			$("#box00").delay(600).show("slow").animate({'top':"0"},850);
+			$("#box1").delay(600).show("slow").animate({'top':"0"},1000);
+			$("#box2").delay(600).show("slow").animate({'top':"0"},1350);
+			$("#box3").delay(600).show("slow").animate({'top':"0"},1700);
 			animationClicked = false;
+		}
+		
+		function box0_0 () {
+			if (!designClicked) {
+				$("#box1").css({'background':"green"});
+				//load this content
+			}
+			else if (!dekorClicked){
+				$("#box2").css({'background':"green"})
+				//loead this content
+			}
+			else if (!skiltClicked){
+				$("#box3").css({'background':"green"})
+				//load this content
+			}
+			else{
+				$("#box0").css({'background':"green"})
+			}
 		}
 		//End box0
 		
@@ -72,6 +108,7 @@
 				'-o-transform':"rotate(90deg)"
 			});
 			$("#box00").css({'left':"40%",'background':"red"});
+			$("#contentBox").css({'z-index': "10050"});
 			$("#box00,#box0,#box2,#box3").css({'top':"20px"});
 			$("#mirrorBox0,#mirrorBox1,#mirrorBox2,#mirrorBox3,#box0,#box2,#box3").hide();
 			$("#box0").delay(1250).show("slow").animate({'top':"0"},850);
@@ -79,6 +116,20 @@
 			$("#box2").delay(1250).show("slow").animate({'top':"0"},1350);
 			$("#box3").delay(1250).show("slow").animate({'top':"0"},1700);
 			designClicked = false;
+		}
+		function box1_0 () {
+			if (!animationClicked) {
+				$("#box0").css({'background':"red"})
+			}
+			else if (!dekorClicked){
+				$("#box2").css({'background':"red"})
+			}
+			else if (!skiltClicked){
+				$("#box3").css({'background':"red"})
+			}
+			else{
+				$("#box1").css({'background':"red"})
+			}
 		}
 		//End box1
 		
@@ -95,6 +146,7 @@
 				'-o-transform':"rotate(-90deg)"
 			});
 			$("#box00").css({'left':"60%",'background':"yellow"});
+			$("#contentBox").css({'z-index': "10050"});
 			$("#box00,#box0,#box1,#box3").css({'top':"20px"});
 			$("#mirrorBox0,#mirrorBox1,#mirrorBox2,#mirrorBox3,#box0,#box1,#box3").hide();
 			$("#box0").delay(1250).show("slow").animate({'top':"0"},850);
@@ -102,6 +154,20 @@
 			$("#box00").delay(1250).show("slow").animate({'top':"0"},1350);
 			$("#box3").delay(1250).show("slow").animate({'top':"0"},1700);
 			dekorClicked = false;
+		}
+		function box2_0 () {
+			if (!animationClicked) {
+				$("#box0").css({'background':"yellow"})
+			}
+			else if (!designClicked){
+				$("#box1").css({'background':"yellow"})
+			}
+			else if (!skiltClicked){
+				$("#box3").css({'background':"yellow"})
+			}
+			else{
+				$("#box2").css({'background':"yellow"})
+			}
 		}
 		//End box2
 		
@@ -118,6 +184,7 @@
 				'-o-transform':"rotate(-90deg)"
 			});
 			$("#box00").css({'left':"80%",'background':"blue"});
+			$("#contentBox").css({'z-index': "10050"});
 			$("#box00,#box0,#box1,#box2").css({'top':"20px"});
 			$("#mirrorBox0,#mirrorBox1,#mirrorBox2,#mirrorBox3,#box0,#box1,#box2").hide();
 			$("#box0").delay(1250).show("slow").animate({'top':"0"},850);
@@ -125,6 +192,20 @@
 			$("#box2").delay(1250).show("slow").animate({'top':"0"},1350);
 			$("#box00").delay(1250).show("slow").animate({'top':"0"},1700);
 			skiltClicked = false;
+		}
+		function box3_0 () {
+			if (!animationClicked) {
+				$("#box0").css({'background':"blue"})
+			}
+			else if (!designClicked){
+				$("#box1").css({'background':"blue"})
+			}
+			else if (!dekorClicked){
+				$("#box2").css({'background':"blue"})
+			}
+			else{
+				$("#box3").css({'background':"blue"})
+			}
 		}
 		//End box3
 		
@@ -171,6 +252,28 @@
 	margin-right:auto;
 	width: 750px;
 	position: relative;
+}
+
+#contentBox{
+	width: 362px;
+	height:800px;
+	margin-top: -200px;
+	float:left;
+	z-index: -5500;
+	position: absolute;
+		left: 20%;
+	/**CSS3*/
+	border-radius: 10px 10px;
+	transform: rotate(90deg);
+	-ms-transform: rotate(90deg); /* IE 9 */
+	-webkit-transform: rotate(90deg); /* Safari and Chrome */
+	-o-transform: rotate(90deg); /* Opera */
+	-moz-transform: rotate(90deg); /* Firefox */
+}
+
+#contentBox p{
+	display: none;
+	color: black;
 }
 
 #box00{
@@ -332,7 +435,7 @@
 	z-index:-1000;
 	/**CSS3*/
 	transform: skew(0deg,35deg);
-	-ms-transform: skew(0deg,35deg); /* IE 9 */
+	-ms-transform:90deg0deg,35deg); /* IE 9 */
 	-webkit-transform: skew(0deg,35deg); /* Safari and Chrome */
 	-o-transform: skew(0deg,35deg); /* Opera */
 	-moz-transform: skew(0deg,35deg); /* Firefox */
@@ -354,8 +457,11 @@ p{
  
  <body>
 <div id="wrapp">
-	<!-- Hidden tab -->
+	<!-- Hidden boxes -->
 	<div id="box00"></div>
+	<div id="contentBox">
+		<p>Lorem ipsum colored alle er fine.Lorem ipsum colored alle er fine.Lorem ipsum colored alle er fine.</p>
+	</div>
 	<!-- 1st tab, -->
 	<div id="box0">
 		<p>ANIMASJON</p><!-- Should be programmed so it only appears on hover -->
